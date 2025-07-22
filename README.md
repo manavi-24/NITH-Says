@@ -1,79 +1,66 @@
-# NITH Says
+# NITH-Says – Campus Social Platform
 
-A social media platform for NITH students to share their thoughts, connect with peers, and stay updated with campus news!
+NITH-Says is a modern social media platform designed for the students of NIT Hamirpur. It offers a secure, anonymous space to interact, share updates, access college resources, and connect with the campus community.
 
-## Overview
+## Features
 
-This project is built using [Next.js](https://nextjs.org/) and bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). It leverages Firebase for backend services and utilizes Tailwind CSS for styling. The platform allows users to post content (text, images, or videos), interact via likes and comments, and stay updated with campus-related news.
+- **Anonymous Posting:** Share thoughts, questions, or updates without revealing your identity.
+- **Real-Time Interactions:** Instant commenting and liking on posts, powered by Firebase Firestore.
+- **Media Uploads:** Attach images and files to posts for richer content.
+- **News Feed:** Stay updated with the latest posts and activities from fellow students.
+- **Techno Tweets:** Special section for technical updates and quick micro-posts.
+- **College Portal Access:** Convenient access to important college resources and portals.
+- **Syllabus Search:** Quickly find syllabus and academic material through a dedicated search interface.
+- **Authentication:** Secure sign-in with Google Cloud and NextAuth for verified campus users.
+- **Responsive UI:** Clean, mobile-first design using Tailwind CSS.
 
-## Project Structure
+## Tech Stack
 
-- **src/app/**  
-  - `layout.js`: Main layout for the app, includes sidebar, news, search, and comment modal.
-  - `posts/[id]/page.js`: Dynamic route to render individual post details and associated comments.
-
-- **src/components/**  
-  - `Sidebar.jsx`: Renders user profile info and navigation links.
-  - `Feed.jsx`: Fetches and displays posts from Firestore.
-  - `Post.jsx`: Displays individual post with media (image/video), user info, and actions.
-  - `Input.jsx`: Form for creating new posts, including media upload.
-  - `Icons.jsx`: Handles post actions (like, comment, delete), leverages Recoil for modal state.
-  - `CommentModal.jsx`: Modal for adding comments to posts.
-  - `Comments.jsx`: Fetches and displays comments for a specific post.
-  - `Comment.jsx`: Displays an individual comment, supports liking and deleting.
-  - `News.jsx`: Displays campus news articles and allows loading more.
-  - `SessionWrapper.jsx`: Wraps app in authentication session context.
-
-- **src/atom/**  
-  - `modalAto.js`: Recoil atom state for modal and post ID.
-
-- **public/**  
-  - Static assets (images, etc.).
-
-- **tailwind.config.js**  
-  - Tailwind CSS configuration for styling.
-
-- **firebase.js**  
-  - Firebase initialization and configuration.
-
-## Main Features
-
-- **Authentication:** Uses NextAuth for login/session management.
-- **Posting:** Users can share text, images, and videos.
-- **Feed:** Posts are displayed in reverse chronological order.
-- **Likes & Comments:** Users can interact with posts through likes and threaded comments.
-- **News Section:** Aggregates and displays campus news.
-- **Responsive Design:** Built with Tailwind CSS for modern UI and responsiveness.
+- **Frontend:** [Next.js](https://nextjs.org/) – React-based framework for fast, scalable web apps.
+- **Backend / Database:** [Firebase Firestore](https://firebase.google.com/products/firestore) – Real-time NoSQL database.
+- **Authentication:** [NextAuth.js](https://next-auth.js.org/) – Secure and flexible authentication, integrated with Google Cloud.
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/) – Utility-first CSS framework for responsive and customizable UI.
 
 ## Getting Started
 
-First, install dependencies and run the development server:
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/manavi-24/NITH-Says.git
+   cd NITH-Says
+   ```
 
-```bash
-npm install
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the app. Edit files in `src/app/page.js` to see live updates.
+3. **Configure environment variables**
 
-## Deployment
+   Create a `.env.local` file in the root directory and add your Firebase, NextAuth, and Google Cloud credentials. Example:
+   ```env
+   NEXTAUTH_URL=http://localhost:3000
+   NEXTAUTH_SECRET=your_nextauth_secret
+   FIREBASE_API_KEY=your_firebase_api_key
+   FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
+   FIREBASE_PROJECT_ID=your_firebase_project_id
+   FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket
+   FIREBASE_MESSAGING_SENDER_ID=your_firebase_messaging_sender_id
+   FIREBASE_APP_ID=your_firebase_app_id
+   GOOGLE_CLIENT_ID=your_google_client_id
+   GOOGLE_CLIENT_SECRET=your_google_client_secret
+   ```
 
-The easiest way to deploy your Next.js app is on [Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
+4. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+   Visit [http://localhost:3000](http://localhost:3000) to view the app.
 
-Refer to the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-## Learn More
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Learn Next.js](https://nextjs.org/learn)
-- [Next.js GitHub Repository](https://github.com/vercel/next.js/)
+This project is licensed under the MIT License.
 
 ---
 
-This project is public and open for contributions!
+**NITH-Says** – Connect, share, and stay updated with your campus community!
